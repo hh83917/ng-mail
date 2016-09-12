@@ -6,11 +6,27 @@
 			<td>Email</td>
 			<td>Phone #</td>
 		</tr>
-		<tr>
-			<td>Ryan Walsh</td>
-			<td>DevMountain</td>
-			<td>ryan.walsh@devmounta.in</td>
-			<td>Wouldn't you like to know?</td>
+		<!--
+			When someone clicks on a contact
+			go to draft state
+			with a param of the contact email
+			populate the "To" field of draft with that email
+
+			state.go
+				- ( toState, params )
+			adjust draft state in app.js 
+				- url needs to change to allow params
+			adjust draftCtrl
+			$stateParams
+		 -->
+		<tr
+			ng-click="messageContact( contact )"
+			ng-repeat="contact in contacts"
+		>
+			<td>{{ contact.name }}</td>
+			<td>{{ contact.company }}</td>
+			<td>{{ contact.email }}</td>
+			<td>{{ contact.phone }}</td>
 		</tr>
 	</table>
 </main>
