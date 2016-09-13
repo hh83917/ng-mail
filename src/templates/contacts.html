@@ -6,11 +6,15 @@
 			<td>Email</td>
 			<td>Phone #</td>
 		</tr>
-		<tr ng-click="messageContact( contact )" ng-repeat="contact in contacts">
-			<td>{{ contact.name }}</td>
-			<td>{{ contact.company }}</td>
-			<td>{{ contact.email }}</td>
-			<td>{{ contact.phone }}</td>
+		<!-- ONLY USED {{ }} ON NAME BECAUSE STRING BINDING -->
+		<tr
+			contact
+			contact-name="{{ contact.name }}"
+			contact-number="contact.phone"
+			contact-email="contact.email"
+			contact-company="contact.company"
+			ng-repeat="contact in contacts"
+		>
 		</tr>
 	</table>
 </main>
