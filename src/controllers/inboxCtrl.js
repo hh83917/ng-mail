@@ -1,5 +1,5 @@
-angular.module( "AngularMail" )
-.controller( "inboxCtrl", function( $scope, mailService ) {
+// controller reduced to a function, wrapped by angular inside of app.js
+function inboxCtrl( $scope, mailService ) {
 	function init() {
 		$scope.selectedMessage = null;
 		$scope.mail = mailService.getMail();
@@ -10,4 +10,7 @@ angular.module( "AngularMail" )
 	}
 
 	init();
-} );
+}
+
+export default inboxCtrl;
+// module.exports = inboxCtrl;
